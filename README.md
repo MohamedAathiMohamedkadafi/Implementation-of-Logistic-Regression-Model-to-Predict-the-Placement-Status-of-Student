@@ -26,22 +26,17 @@ Developed by: Mohmaed Aathil M
 RegisterNumber: 25008235
 */
 ```
+```
 import pandas as pd
-
 data=pd.read_csv("Placement_Data.csv")
-
 data.head()
 
 data1=data.copy()
-
 data1.head()
 
 data1=data1.drop(['sl_no','salary'],axis=1)
-
 data1.isnull().sum()
-
 data1.duplicated().sum()
-
 data1
 
 from sklearn.preprocessing import LabelEncoder
@@ -61,6 +56,7 @@ x=data1.iloc[:, : -1]
 x
 y=data1["status"]
 y
+
 from sklearn.model_selection import train_test_split
 x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2,random_state=0)
 from sklearn.linear_model import LogisticRegression
@@ -81,7 +77,7 @@ print("\nClassification Report:\n",cr)
 from sklearn import metrics
 cm_display=metrics.ConfusionMatrixDisplay(confusion_matrix=confusion,display_labels=[True,False])
 cm_display.plot()
-
+```
 ## Output:
 <img width="936" height="531" alt="Screenshot 2025-11-21 154904" src="https://github.com/user-attachments/assets/0ef2dcbe-828f-4861-becd-7d982360bff3" />
 
